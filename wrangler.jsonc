@@ -1,0 +1,16 @@
+{
+  // CoolQuote submission Worker (dev). Cloudflare reads this file when it deploys from GitHub.
+  "name": "coolquote-api",
+  "main": "index.js",
+  "compatibility_date": "2026-09-01",
+  // Only handle /api/* on the dev address. Everything else stays with the page Worker.
+  "routes": [
+    { "pattern": "coolquote-dev.certechservices.net/api/*", "zone_name": "certechservices.net" }
+  ],
+  "workers_dev": false,
+  // Email connection, locked to one verified address
+  "send_email": [
+    { "name": "EMAIL", "destination_address": "certechhvac@gmail.com" }
+  ],
+  "observability": { "enabled": true }
+}
